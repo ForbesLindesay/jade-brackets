@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title CodeMirror: Jade Templating Mode
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='http://codemirror.net/lib/codemirror.css')
+  body
+    form
+      textarea#code
+    script(src='http://codemirror.net/lib/codemirror.js')
+    script(src='http://codemirror.net/mode/javascript/javascript.js')
+    script(src='http://codemirror.net/mode/css/css.js')
+    script(src='http://codemirror.net/mode/markdown/markdown.js')
+    script(src='jade.js')
+    script.
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: 'jade',
+        lineNumbers: true
+      });
