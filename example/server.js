@@ -11,11 +11,7 @@ app.get('/', function (req, res) {
 });
 app.get('/jade.js', function (req, res) {
   var text = fs.readFileSync(__dirname + '/../lib/mode.js', 'utf8');
-  res.send(text);
-});
-app.get('/codemirror.js', function (req, res) {
-  var text = fs.readFileSync(__dirname + '/codemirror.js', 'utf8');
-  res.send(text);
+  res.end(text);
 });
 
 

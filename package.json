@@ -16,6 +16,18 @@
   "devDependencies": {
     "rimraf": "~2.2.4",
     "express": "~3.4.7",
-    "jade": "~0.35.0"
+    "jade": "~0.35.0",
+    "node-zip": "~1.0.1",
+    "github-basic": "~2.0.0",
+    "mocha": "~1.15.1",
+    "promise": "~3.2.0",
+    "sha": "~1.2.3",
+    "barrage": "~1.0.0"
+  },
+  "dependencies": {
+    "highlight-codemirror": "~3.20.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
   }
 }

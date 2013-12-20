@@ -1,0 +1,22 @@
+
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">tag</span> = <span class="cm-string">&#39;p&#39;</span>
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">foo</span> = <span class="cm-string">&#39;bar&#39;</span>
+
+<span class="cm-punctuation">#{</span><span class="cm-variable">tag</span><span class="cm-puncutation">}</span><span class="cm-string"> value</span>
+<span class="cm-punctuation">#{</span><span class="cm-variable">tag</span><span class="cm-puncutation">}</span><span class="cm-punctuation">(</span><span class="cm-attribute">foo</span>=<span class="cm-string">&#39;bar&#39;</span><span class="cm-punctuation">)</span><span class="cm-string"> value</span>
+<span class="cm-punctuation">#{</span><span class="cm-variable">foo</span> ? <span class="cm-string">&#39;a&#39;</span> : <span class="cm-string">&#39;li&#39;</span><span class="cm-puncutation">}</span><span class="cm-punctuation">(</span><span class="cm-attribute">something</span><span class="cm-punctuation">)</span><span class="cm-string"> here</span>
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">item</span>(<span class="cm-variable">icon</span>)
+<span class="cm-indent">  </span><span class="cm-tag">li</span>
+<span class="cm-indent">    </span><span class="cm-keyword">if</span> <span class="cm-variable">attributes</span>.<span class="cm-property">href</span>
+<span class="cm-indent">      </span><span class="cm-tag">a</span><span class="cm-keyword">&amp;attributes</span>(<span class="cm-variable">attributes</span>)
+<span class="cm-indent">        </span><span class="cm-tag">img</span><span class="cm-qualifier">.icon</span><span class="cm-punctuation">(</span><span class="cm-attribute">src</span>=<span class="cm-variable">icon</span><span class="cm-punctuation">)</span>
+<span class="cm-indent">        </span><span class="cm-keyword">block</span>
+<span class="cm-indent">    </span><span class="cm-keyword">else</span>
+<span class="cm-indent">      </span><span class="cm-tag">span</span><span class="cm-keyword">&amp;attributes</span>(<span class="cm-variable">attributes</span>)
+<span class="cm-indent">        </span><span class="cm-tag">img</span><span class="cm-qualifier">.icon</span><span class="cm-punctuation">(</span><span class="cm-attribute">src</span>=<span class="cm-variable">icon</span><span class="cm-punctuation">)</span>
+<span class="cm-indent">        </span><span class="cm-keyword">block</span>
+
+<span class="cm-tag">ul</span>
+<span class="cm-indent">  </span><span class="cm-variable">+item</span>(<span class="cm-string">&#39;contact&#39;</span>)<span class="cm-string"> Contact</span>
+<span class="cm-indent">  </span><span class="cm-variable">+item</span><span class="cm-punctuation">(</span><span class="cm-attribute">href</span>=<span class="cm-string">&#39;/contact&#39;</span><span class="cm-punctuation">)</span><span class="cm-string"> Contact</span>

@@ -1,0 +1,24 @@
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">article</span>(<span class="cm-variable">name</span>)
+<span class="cm-indent">  </span><span class="cm-tag">section</span><span class="cm-qualifier">.article</span>
+<span class="cm-indent">    </span><span class="cm-tag">h1</span><span class="cm-punctuation">=</span> <span class="cm-variable">name</span>
+<span class="cm-indent">    </span><span class="cm-keyword">block</span>
+
+<span class="cm-tag">html</span>
+<span class="cm-indent">  </span><span class="cm-tag">body</span>
+<span class="cm-indent">    </span><span class="cm-variable">+article</span>(<span class="cm-string">&#39;Foo&#39;</span>)<span class="cm-colon">: </span><span class="cm-tag">p</span><span class="cm-string"> I&#39;m article foo</span>
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">article</span>(<span class="cm-variable">name</span>)
+<span class="cm-indent">  </span><span class="cm-tag">section</span><span class="cm-qualifier">.article</span>
+<span class="cm-indent">    </span><span class="cm-tag">h1</span><span class="cm-punctuation">=</span> <span class="cm-variable">name</span>
+<span class="cm-indent">    </span><span class="cm-tag">p</span>
+<span class="cm-indent">      </span><span class="cm-keyword">block</span>
+
+<span class="cm-tag">html</span>
+<span class="cm-indent">  </span><span class="cm-tag">body</span>
+<span class="cm-indent">    </span><span class="cm-variable">+article</span>(<span class="cm-string">&#39;Something&#39;</span>)<span class="cm-dot">.</span>
+<span class="cm-string">      I&#39;m a much longer</span>
+<span class="cm-string">      text-only article,</span>
+<span class="cm-string">      but you can still</span>
+<span class="cm-string">      inline html tags</span>
+<span class="cm-string">      in me if you want.</span>

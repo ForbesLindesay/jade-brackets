@@ -1,0 +1,11 @@
+
+<span class="cm-keyword">extend</span><span class="cm-string"> auxiliary/layout</span>
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">article</span>(<span class="cm-variable">title</span>)
+<span class="cm-indent">  </span><span class="cm-keyword">if</span> <span class="cm-variable">title</span>
+<span class="cm-indent">    </span><span class="cm-tag">h1</span><span class="cm-punctuation">=</span> <span class="cm-variable">title</span>
+<span class="cm-indent">  </span><span class="cm-keyword">block</span>
+
+<span class="cm-keyword">block </span><span class="cm-variable">content</span>
+<span class="cm-indent">  </span><span class="cm-variable">+article</span>(<span class="cm-string">&quot;The meaning of life&quot;</span>)
+<span class="cm-indent">    </span><span class="cm-tag">p</span><span class="cm-string"> Foo bar baz!</span>

@@ -1,0 +1,49 @@
+
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">users</span> = []
+
+<span class="cm-tag">ul</span>
+<span class="cm-indent">  </span><span class="cm-keyword">for</span><span class="cm-variable"> user</span><span class="cm-keyword"> in</span> <span class="cm-variable">users</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-punctuation">=</span> <span class="cm-variable">user</span>.<span class="cm-variable">name</span>
+<span class="cm-indent">  </span><span class="cm-keyword">else</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> no users!</span>
+
+
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">users</span> = [{ <span class="cm-variable">name</span>: <span class="cm-string">&#39;tobi&#39;</span>, <span class="cm-variable">friends</span>: [<span class="cm-string">&#39;loki&#39;</span>] }, { <span class="cm-variable">name</span>: <span class="cm-string">&#39;loki&#39;</span> }]
+
+<span class="cm-keyword">if</span> <span class="cm-variable">users</span>
+<span class="cm-indent">  </span><span class="cm-tag">ul</span>
+<span class="cm-indent">    </span><span class="cm-keyword">for</span><span class="cm-variable"> user</span><span class="cm-keyword"> in</span> <span class="cm-variable">users</span>
+<span class="cm-indent">      </span><span class="cm-tag">li</span><span class="cm-punctuation">=</span> <span class="cm-variable">user</span>.<span class="cm-property">name</span>
+<span class="cm-indent">    </span><span class="cm-keyword">else</span>
+<span class="cm-indent">      </span><span class="cm-tag">li</span><span class="cm-string"> no users!</span>
+
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">user</span> = { <span class="cm-property">name</span>: <span class="cm-string">&#39;tobi&#39;</span>, <span class="cm-property">age</span>: <span class="cm-number">10</span> }
+
+<span class="cm-tag">ul</span>
+<span class="cm-indent">  </span><span class="cm-keyword">each</span><span class="cm-variable"> val, key</span><span class="cm-keyword"> in</span> <span class="cm-variable">user</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> #{key}: #{val}</span>
+<span class="cm-indent">  </span><span class="cm-keyword">else</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> user has no details!</span>
+
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">user</span> = {}
+
+<span class="cm-tag">ul</span>
+<span class="cm-indent">  </span><span class="cm-keyword">each</span><span class="cm-variable"> prop, key</span><span class="cm-keyword"> in</span> <span class="cm-variable">user</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> #{key}: #{val}</span>
+<span class="cm-indent">  </span><span class="cm-keyword">else</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> user has no details!</span>
+
+<span class="cm-tag">ul</span>
+<span class="cm-indent">  </span><span class="cm-keyword">- each</span><span class="cm-variable"> prop, key</span><span class="cm-keyword"> in</span> <span class="cm-variable">user</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> #{key}: #{val}</span>
+<span class="cm-indent">  </span><span class="cm-punctuation">-</span> <span class="cm-keyword">else</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> user has no details!</span>
+
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">user</span> = <span class="cm-variable">Object</span>.<span class="cm-property">create</span>(<span class="cm-atom">null</span>)
+<span class="cm-punctuation">-</span> <span class="cm-variable">user</span>.<span class="cm-property">name</span> = <span class="cm-string">&#39;tobi&#39;</span>
+
+<span class="cm-tag">ul</span>
+<span class="cm-indent">  </span><span class="cm-keyword">each</span><span class="cm-variable"> val, key</span><span class="cm-keyword"> in</span> <span class="cm-variable">user</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> #{key}: #{val}</span>
+<span class="cm-indent">  </span><span class="cm-keyword">else</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> user has no details!</span>

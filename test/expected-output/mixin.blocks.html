@@ -1,0 +1,44 @@
+
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">form</span>(<span class="cm-variable">method</span>, <span class="cm-variable">action</span>)
+<span class="cm-indent">  </span><span class="cm-tag">form</span><span class="cm-punctuation">(</span><span class="cm-attribute">method</span>=<span class="cm-variable">method</span>, <span class="cm-attribute">action</span>=<span class="cm-variable">action</span><span class="cm-punctuation">)</span>
+<span class="cm-indent">    </span><span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">csrf_token_from_somewhere</span> = <span class="cm-string">&#39;hey&#39;</span>
+<span class="cm-indent">    </span><span class="cm-tag">input</span><span class="cm-punctuation">(</span><span class="cm-attribute">type</span>=<span class="cm-string">&#39;hidden&#39;</span>, <span class="cm-attribute">name</span>=<span class="cm-string">&#39;_csrf&#39;</span>, <span class="cm-attribute">value</span>=<span class="cm-variable">csrf_token_from_somewhere</span><span class="cm-punctuation">)</span>
+<span class="cm-indent">    </span><span class="cm-keyword">block</span>
+
+<span class="cm-tag">html</span>
+<span class="cm-indent">  </span><span class="cm-tag">body</span>
+<span class="cm-indent">    </span><span class="cm-variable">+form</span>(<span class="cm-string">&#39;GET&#39;</span>, <span class="cm-string">&#39;/search&#39;</span>)
+<span class="cm-indent">      </span><span class="cm-tag">input</span><span class="cm-punctuation">(</span><span class="cm-attribute">type</span>=<span class="cm-string">&#39;text&#39;</span>, <span class="cm-attribute">name</span>=<span class="cm-string">&#39;query&#39;</span>, <span class="cm-attribute">placeholder</span>=<span class="cm-string">&#39;Search&#39;</span><span class="cm-punctuation">)</span>
+<span class="cm-indent">      </span><span class="cm-tag">input</span><span class="cm-punctuation">(</span><span class="cm-attribute">type</span>=<span class="cm-string">&#39;submit&#39;</span>, <span class="cm-attribute">value</span>=<span class="cm-string">&#39;Search&#39;</span><span class="cm-punctuation">)</span>
+
+<span class="cm-tag">html</span>
+<span class="cm-indent">  </span><span class="cm-tag">body</span>
+<span class="cm-indent">    </span><span class="cm-variable">+form</span>(<span class="cm-string">&#39;POST&#39;</span>, <span class="cm-string">&#39;/search&#39;</span>)
+<span class="cm-indent">      </span><span class="cm-tag">input</span><span class="cm-punctuation">(</span><span class="cm-attribute">type</span>=<span class="cm-string">&#39;text&#39;</span>, <span class="cm-attribute">name</span>=<span class="cm-string">&#39;query&#39;</span>, <span class="cm-attribute">placeholder</span>=<span class="cm-string">&#39;Search&#39;</span><span class="cm-punctuation">)</span>
+<span class="cm-indent">      </span><span class="cm-tag">input</span><span class="cm-punctuation">(</span><span class="cm-attribute">type</span>=<span class="cm-string">&#39;submit&#39;</span>, <span class="cm-attribute">value</span>=<span class="cm-string">&#39;Search&#39;</span><span class="cm-punctuation">)</span>
+
+<span class="cm-tag">html</span>
+<span class="cm-indent">  </span><span class="cm-tag">body</span>
+<span class="cm-indent">    </span><span class="cm-variable">+form</span>(<span class="cm-string">&#39;POST&#39;</span>, <span class="cm-string">&#39;/search&#39;</span>)
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">bar</span>()
+<span class="cm-indent">  </span><span class="cm-builtin">#bar</span>
+<span class="cm-indent">    </span><span class="cm-keyword">block</span>
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">foo</span>()
+<span class="cm-indent">  </span><span class="cm-builtin">#foo</span>
+<span class="cm-indent">    </span><span class="cm-variable">+bar</span>
+<span class="cm-indent">      </span><span class="cm-keyword">block</span>
+
+<span class="cm-variable">+foo</span>
+<span class="cm-indent">  </span><span class="cm-tag">p</span><span class="cm-string"> one</span>
+<span class="cm-indent">  </span><span class="cm-tag">p</span><span class="cm-string"> two</span>
+<span class="cm-indent">  </span><span class="cm-tag">p</span><span class="cm-string"> three</span>
+
+
+<span class="cm-keyword">mixin</span> <span class="cm-variable">baz</span>
+<span class="cm-indent">    </span><span class="cm-builtin">#baz</span>
+<span class="cm-indent">        </span><span class="cm-keyword">block</span>
+
+<span class="cm-variable">+baz</span>()<span class="cm-punctuation">=</span> <span class="cm-string">&#39;123&#39;</span>
