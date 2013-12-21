@@ -7,13 +7,16 @@ html
   body
     form
       textarea#code
-    script(src='http://codemirror.net/lib/codemirror.js')
-    script(src='http://codemirror.net/mode/javascript/javascript.js')
-    script(src='http://codemirror.net/mode/css/css.js')
-    script(src='http://codemirror.net/mode/markdown/markdown.js')
-    script(src='jade.js')
-    script.
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        mode: 'jade',
-        lineNumbers: true
-      });
+    if browserify
+      script(src="/index.js")
+    else
+      script(src='http://codemirror.net/lib/codemirror.js')
+      script(src='http://codemirror.net/mode/javascript/javascript.js')
+      script(src='http://codemirror.net/mode/css/css.js')
+      script(src='http://codemirror.net/mode/markdown/markdown.js')
+      script(src='jade.js')
+      script.
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+          mode: 'jade',
+          lineNumbers: true
+        });

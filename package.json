@@ -22,12 +22,15 @@
     "mocha": "~1.15.1",
     "promise": "~3.2.0",
     "sha": "~1.2.3",
-    "barrage": "~1.0.0"
+    "barrage": "~1.0.0",
+    "browserify-middleware": "~2.2.0"
   },
   "dependencies": {
-    "highlight-codemirror": "~3.20.0"
+    "highlight-codemirror": "~3.20.0",
+    "code-mirror": "~3.20.0"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "example": "node build.js && node example/server.js --browserify"
   }
 }
