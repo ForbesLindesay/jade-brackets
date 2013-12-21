@@ -46,7 +46,7 @@ if (fs.existsSync(EXTENSIONS_FOLDER)) {
 
 // SYNTAX HIGHLIGHTER FOR NODE
 
-var highlighter = '"use strict"\n'
+var highlighter = '"use strict"\n\n'
   + 'var CodeMirror = require("highlight-codemirror");\n\n'
   + 'CodeMirror.loadMode("javascript");\n'
   + 'CodeMirror.loadMode("css");\n'
@@ -66,4 +66,19 @@ fs.writeFileSync(__dirname + '/bin/jade-highlight/index.js', highlighter);
 fs.writeFileSync(__dirname + '/bin/jade-highlight/package.json', pkg('highlighter'));
 fs.writeFileSync(__dirname + '/bin/jade-highlight/README.md', fs.readFileSync(__dirname + '/README.md'));
 
+// CODE MIRROR MODE IN NPM
 
+var codemirrorMode = '"use strict";\n\n'
+  + 'var CodeMirror = require("code-mirror");\n\n'
+  + 'require("code-mirror/mode/javascript")\n'
+  + 'require("code-mirror/mode/css")\n'
+  + 'require("code-mirror/mode/htmlmixed")\n'
+  + 'require("code-mirror/mode/markdown")\n\n'
+  + mode + '\n\n'
+  + 'module.exports = CodeMirror\n';
+
+
+fs.mkdirSync(__dirname + '/bin/jade-code-mirror');
+fs.writeFileSync(__dirname + '/bin/jade-code-mirror/index.js', codemirrorMode);
+fs.writeFileSync(__dirname + '/bin/jade-code-mirror/package.json', pkg('code-mirror'));
+fs.writeFileSync(__dirname + '/bin/jade-code-mirror/README.md', fs.readFileSync(__dirname + '/README.md'));

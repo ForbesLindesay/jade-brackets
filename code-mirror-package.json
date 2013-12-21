@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/ForbesLindesay/jade-brackets.git"
   },
-  "dependencies": {
-    "highlight-codemirror": "~3.20.0"
+  "peerDependencies ": {
+    "code-mirror": "~3"
   }
 }
