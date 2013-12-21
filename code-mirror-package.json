@@ -1,5 +1,5 @@
 {
-  "name": "jade-highlighter",
+  "name": "jade-code-mirror",
   "description": "A robust syntax highlighter for jade in node.js",
   "homepage": "https://github.com/ForbesLindesay/jade-brackets",
   "author": "Forbes Lindesay (http://www.forbeslindesay.co.uk)",

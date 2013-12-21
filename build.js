@@ -35,6 +35,7 @@ plugin += '});';
 var zip = new Zip();
 zip.file('main.js', plugin);
 zip.file('package.json', bracketsPackage);
+zip.file('LICENSE', fs.readFileSync(__dirname + '/LICENSE', 'utf8'));
 fs.writeFileSync(__dirname + '/bin/jade.zip', zip.generate({base64:false,compression:'DEFLATE'}), 'binary');
 
 if (fs.existsSync(EXTENSIONS_FOLDER)) {
@@ -65,6 +66,7 @@ fs.mkdirSync(__dirname + '/bin/jade-highlight');
 fs.writeFileSync(__dirname + '/bin/jade-highlight/index.js', highlighter);
 fs.writeFileSync(__dirname + '/bin/jade-highlight/package.json', pkg('highlighter'));
 fs.writeFileSync(__dirname + '/bin/jade-highlight/README.md', fs.readFileSync(__dirname + '/README.md'));
+fs.writeFileSync(__dirname + '/bin/jade-highlight/LICENSE', fs.readFileSync(__dirname + '/LICENSE'));
 
 // CODE MIRROR MODE IN NPM
 
@@ -82,3 +84,4 @@ fs.mkdirSync(__dirname + '/bin/jade-code-mirror');
 fs.writeFileSync(__dirname + '/bin/jade-code-mirror/index.js', codemirrorMode);
 fs.writeFileSync(__dirname + '/bin/jade-code-mirror/package.json', pkg('code-mirror'));
 fs.writeFileSync(__dirname + '/bin/jade-code-mirror/README.md', fs.readFileSync(__dirname + '/README.md'));
+fs.writeFileSync(__dirname + '/bin/jade-code-mirror/LICENSE', fs.readFileSync(__dirname + '/LICENSE'));

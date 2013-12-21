@@ -3,7 +3,7 @@
   "title": "Jade (Official Plugin)",
   "description": "Add first class support for jade (including syntax highlighting).  This module is maintained by the maintainer of jade.",
   "homepage": "https://github.com/ForbesLindesay/jade-brackets",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "author": "Forbes Lindesay (http://www.forbeslindesay.co.uk)",
   "license": "MIT",
   "engines": {
@@ -23,7 +23,8 @@
     "promise": "~3.2.0",
     "sha": "~1.2.3",
     "barrage": "~1.0.0",
-    "browserify-middleware": "~2.2.0"
+    "browserify-middleware": "~2.2.0",
+    "win-spawn": "~2.0.0"
   },
   "dependencies": {
     "highlight-codemirror": "~3.20.0",
@@ -31,6 +32,7 @@
   },
   "scripts": {
     "test": "mocha -R spec",
-    "example": "node build.js && node example/server.js --browserify"
+    "example": "node build.js && node example/server.js --browserify",
+    "release": "node build.js && npm test && node release.js"
   }
 }

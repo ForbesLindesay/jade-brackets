@@ -8,7 +8,6 @@ var browserify = require('browserify-middleware');
 var app = express();
 
 app.get('/', function (req, res) {
-  console.dir(process.argv);
   res.send(jade.renderFile(__dirname + '/index.jade', {
     browserify: process.argv.indexOf('--browserify') !== -1 || process.argv.indexOf('-b') !== -1
   }));
