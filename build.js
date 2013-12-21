@@ -9,11 +9,20 @@ var Zip = require('node-zip');
 rm(__dirname + '/bin');
 fs.mkdirSync(__dirname + '/bin');
 
+var version = JSON.parse(fs.readFileSync(__dirname + '/package.json', 'utf8')).version;
+
+function pkg(name) {
+  var pkg = JSON.parse(fs.readFileSync(__dirname + '/' + name + '-package.json', 'utf8'));
+  pkg.version = version;
+  return JSON.stringify(pkg, null, '  ');
+}
+
 var mode = fs.readFileSync(__dirname + '/lib/mode.js', 'utf8');
 
-var bracketsPackage = JSON.parse(fs.readFileSync(__dirname + '/brackets-package.json', 'utf8'));
-bracketsPackage.version = JSON.parse(fs.readFileSync(__dirname + '/package.json', 'utf8')).version;
-bracketsPackage = JSON.stringify(bracketsPackage, null, '  ');
+
+// BRACKETS PACKAGE
+
+var bracketsPackage = pkg('brackets');
 
 var plugin = '';
 plugin += 'define(function (require, exports, module) {\n';
@@ -35,8 +44,9 @@ if (fs.existsSync(EXTENSIONS_FOLDER)) {
   fs.writeFileSync(EXTENSIONS_FOLDER + '/jade/main.js', plugin);
 }
 
-fs.mkdirSync(__dirname + '/bin/jade-highlight');
-fs.writeFileSync(__dirname + '/bin/jade-highlight/index.js', '"use strict"\n'
+// SYNTAX HIGHLIGHTER FOR NODE
+
+var highlighter = '"use strict"\n'
   + 'var CodeMirror = require("highlight-codemirror");\n\n'
   + 'CodeMirror.loadMode("javascript");\n'
   + 'CodeMirror.loadMode("css");\n'
@@ -47,4 +57,13 @@ fs.writeFileSync(__dirname + '/bin/jade-highlight/index.js', '"use strict"\n'
   + '  options = options || {};\n'
   + '  options.name = "jade";\n'
   + '  return CodeMirror.highlight(src, options);\n'
-  + '};');
+  + '};\n\n'
+  + 'module.exports.loadMode = CodeMirror.loadMode.bind(CodeMirror);\n'
+  + 'module.exports.runMode = CodeMirror.runMode.bind(CodeMirror);\n';
+
+fs.mkdirSync(__dirname + '/bin/jade-highlight');
+fs.writeFileSync(__dirname + '/bin/jade-highlight/index.js', highlighter);
+fs.writeFileSync(__dirname + '/bin/jade-highlight/package.json', pkg('highlighter'));
+fs.writeFileSync(__dirname + '/bin/jade-highlight/README.md', fs.readFileSync(__dirname + '/README.md'));
+
+

@@ -1,15 +1,15 @@
 {
-  "name": "jade",
-  "title": "Jade (Official Plugin)",
-  "description": "Add first class support for jade (including syntax highlighting).  This module is maintained by the maintainer of jade.",
+  "name": "jade-highlighter",
+  "title": "Jade syntax highlighterssss",
+  "description": "A robust syntax highlighter for jade in node.js",
   "homepage": "https://github.com/ForbesLindesay/jade-brackets",
   "author": "Forbes Lindesay (http://www.forbeslindesay.co.uk)",
   "license": "MIT",
-  "engines": {
-    "brackets": ">=0.24.0"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/ForbesLindesay/jade-brackets.git"
+  },
+  "dependencies": {
+    "highlight-codemirror": "~3.20.0"
   }
 }
