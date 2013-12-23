@@ -31,7 +31,7 @@ npm install jade-highlight
 ### Usage
 
 ```js
-var jade = require('jade-highlight);
+var jade = require('jade-highlight');
 
 // Optionally register additional languages to highlight filters etc. (by default html, js, css and markdown are supported)
 jade.loadMode('java');
