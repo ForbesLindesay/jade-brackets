@@ -8,8 +8,8 @@ This repository houses the source code that generates three different tools to h
 
 There's also the raw CodeMirror mode in /lib/mode.js
 
-[![Build Status](https://travis-ci.org/ForbesLindesay/jade-brackets.png?branch=master)](https://travis-ci.org/ForbesLindesay/jade-brackets)
-[![Dependency Status](https://gemnasium.com/ForbesLindesay/jade-brackets.png)](https://gemnasium.com/ForbesLindesay/jade-brackets)
+[![Build Status](https://img.shields.io/travis/ForbesLindesay/jade-brackets/master.svg)](https://travis-ci.org/ForbesLindesay/jade-brackets)
+[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/jade-brackets.svg)](https://gemnasium.com/ForbesLindesay/jade-brackets)
 
 ## jade-brackets
 
@@ -20,7 +20,7 @@ This is the official jade plugin for [Brackets](http://brackets.io/).  Brackets 
 
 A simple syntax highlighter for jade.
 
-[![NPM version](https://badge.fury.io/js/jade-highlight.png)](http://badge.fury.io/js/jade-highlight)
+[![NPM version](https://img.shields.io/npm/v/jade-highlight.svg)](http://badge.fury.io/js/jade-highlight)
 
 ### Installation
 
