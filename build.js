@@ -1,6 +1,6 @@
 'use strict';
 
-var EXTENSIONS_FOLDER = 'C:/Users/Forbes/AppData/Roaming/Brackets/extensions/user';
+var EXTENSIONS_FOLDER = 'C:\\Users\\forbes.lindesay\\AppData\\Roaming\\Brackets\\extensions\\user';
 
 var fs = require('fs');
 var rm = require('rimraf').sync;
@@ -24,12 +24,20 @@ var mode = fs.readFileSync(__dirname + '/lib/mode.js', 'utf8');
 
 var bracketsPackage = pkg('brackets');
 
+var htmlStructure = 'var HTML_STRUCTURE_MODULE = (function () {\n  var exports = {};\n  var module = {exports: exports};\n  (function (module, exports) {'
+  + fs.readFileSync(__dirname + '/lib/autocomplete/html-structure.js', 'utf8').replace(/^/gm, '    ')
+  + '\n  }(module, exports));\n  return module.exports;\n}());';
+
+var autocomplete = fs.readFileSync(__dirname + '/lib/autocomplete/index.js', 'utf8').replace(/\brequire\(\'\.\/html-structure\.js\'\)/g, 'HTML_STRUCTURE_MODULE');
+
 var plugin = '';
 plugin += 'define(function (require, exports, module) {\n';
 plugin += '  "use strict";\n\n';
-plugin += mode.replace(/^/gm, '  ') + '\n\n';
+plugin += '  ' + mode.replace(/\n/gm, '\n  ') + '\n\n';
 plugin += '  var LanguageManager = brackets.getModule("language/LanguageManager");\n';
 plugin += '  LanguageManager.defineLanguage("jade", ' + JSON.stringify(require('./lib/language-definition.js')) + ');\n';
+plugin += '  ' + htmlStructure.replace(/\n/gm, '\n  ') + '\n'
+plugin += '  ' + autocomplete.replace(/\n/gm, '\n  ') + '\n'
 plugin += '});';
 
 var zip = new Zip();
