@@ -51,13 +51,13 @@ it('can highlight all of the jade test cases', function () {
   if (!fs.existsSync(__dirname + '/output')) fs.mkdirSync(__dirname + '/output');
   for (var i = 0; i < testCases.length; i++) {
     var src = fs.readFileSync(__dirname + '/cases/' + testCases[i], 'utf8');
-    var html = highlight(src);
+    var html = highlight(src).replace(/\r\n/g, '\n');
     var expectedLocation = __dirname + '/expected-output/' + testCases[i].replace(/\.jade$/, '.html');
     var actualLocation = __dirname + '/output/' + testCases[i].replace(/\.jade$/, '.html');
     fs.writeFileSync(actualLocation, html, 'utf8');
     if (fs.existsSync(expectedLocation)) {
       console.log('- ' + testCases[i]);
-      assert.equal(fs.readFileSync(expectedLocation, 'utf8'), html);
+      assert.equal(fs.readFileSync(expectedLocation, 'utf8').replace(/\r\n/g, '\n'), html);
     } else {
       fs.writeFileSync(expectedLocation, html, 'utf8');
     }

@@ -31,4 +31,11 @@
 <span class="cm-keyword">mixin</span> <span class="cm-variable">foo</span>
 <span class="cm-indent">  </span><span class="cm-tag">div</span><span class="cm-qualifier">.thing</span><span class="cm-punctuation">(</span><span class="cm-attribute">attr1</span>=<span class="cm-string">&#39;foo&#39;</span>, <span class="cm-attribute">attr2</span>=<span class="cm-string">&#39;bar&#39;</span><span class="cm-punctuation">)</span><span class="cm-keyword">&amp;attributes</span>(<span class="cm-variable">attributes</span>)
 
-<span class="cm-variable">+foo</span><span class="cm-punctuation">(</span><span class="cm-attribute">attr3</span>=<span class="cm-string">&#39;baz&#39;</span><span class="cm-punctuation">)</span><span class="cm-qualifier">.thunk</span>
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">val</span> = <span class="cm-string">&#39;&lt;biz&gt;&#39;</span>
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">classes</span> = [<span class="cm-string">&#39;foo&#39;</span>, <span class="cm-string">&#39;bar&#39;</span>]
+<span class="cm-variable">+foo</span><span class="cm-punctuation">(</span><span class="cm-attribute">attr3</span>=<span class="cm-string">&#39;baz&#39;</span> <span class="cm-attribute">data-foo</span>=<span class="cm-variable">val</span> <span class="cm-attribute">data-bar</span>!=<span class="cm-variable">val</span> <span class="cm-attribute">class</span>=<span class="cm-variable">classes</span><span class="cm-punctuation">)</span><span class="cm-qualifier">.thunk</span>
+
+<span class="cm-comment">//- Regression test for #1424</span>
+<span class="cm-keyword">mixin</span> <span class="cm-variable">work_filmstrip_item</span>(<span class="cm-variable">work</span>)
+<span class="cm-indent">  </span><span class="cm-tag">div</span><span class="cm-keyword">&amp;attributes</span>(<span class="cm-variable">attributes</span>)<span class="cm-punctuation">=</span> <span class="cm-variable">work</span>
+<span class="cm-variable">+work_filmstrip_item</span>(<span class="cm-string">&#39;work&#39;</span>)<span class="cm-punctuation">(</span><span class="cm-attribute">&quot;data-profile&quot;</span>=<span class="cm-string">&#39;profile&#39;</span>, <span class="cm-attribute">&quot;data-creator-name&quot;</span>=<span class="cm-string">&#39;name&#39;</span><span class="cm-punctuation">)</span>
