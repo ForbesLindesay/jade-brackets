@@ -1,6 +1,6 @@
 'use strict';
 
-var EXTENSIONS_FOLDER = 'C:\\Users\\forbes.lindesay\\AppData\\Roaming\\Brackets\\extensions\\user';
+var EXTENSIONS_FOLDER = '/Users/forbeslindesay/Library/Application Support/Brackets/extensions/user';
 
 var fs = require('fs');
 var rm = require('rimraf').sync;
@@ -18,6 +18,7 @@ function pkg(name) {
 }
 
 var mode = fs.readFileSync(__dirname + '/lib/mode.js', 'utf8');
+mode += ';' + fs.readFileSync(__dirname + '/lib/overlay.js', 'utf8');
 
 
 // BRACKETS PACKAGE
@@ -51,6 +52,7 @@ if (fs.existsSync(EXTENSIONS_FOLDER)) {
   fs.mkdirSync(EXTENSIONS_FOLDER + '/jade');
   fs.writeFileSync(EXTENSIONS_FOLDER + '/jade/package.json', bracketsPackage);
   fs.writeFileSync(EXTENSIONS_FOLDER + '/jade/main.js', plugin);
+  console.log('updated plugin');
 }
 
 // SYNTAX HIGHLIGHTER FOR NODE
