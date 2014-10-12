@@ -23,9 +23,11 @@
 
 <span class="cm-tag">body</span>
 <span class="cm-indent">  </span><span class="cm-keyword">mixin</span> <span class="cm-variable">list</span>()
+<span class="cm-indent">  </span><span class="cm-variable">+list</span>()
+<span class="cm-indent">  </span>+<span class="cm-string"> list()</span>
 
 <span class="cm-keyword">mixin</span> <span class="cm-variable">foobar</span>(<span class="cm-variable">str</span>)
-<span class="cm-indent">  </span><span class="cm-tag">div</span><span class="cm-builtin">#interpolation</span><span class="cm-punctuation">=</span> <span class="cm-variable">str</span> + <span class="cm-string">&#39;interpolated&#39;</span>
+<span class="cm-indent">  </span><span class="cm-tag">div</span><span class="cm-builtin">#interpolation</span><span class="cm-punctuation">=</span> <span class="cm-variable">str</span> <span class="cm-operator">+</span> <span class="cm-string">&#39;interpolated&#39;</span>
 
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">suffix</span> = <span class="cm-string">&quot;bar&quot;</span>
-<span class="cm-punctuation">+#{</span><span class="cm-string">&#39;foo&#39;</span> + <span class="cm-variable">suffix</span><span class="cm-puncutation">}</span>(<span class="cm-string">&#39;This is &#39;</span>)
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">suffix</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;bar&quot;</span>
+<span class="cm-punctuation">+#{</span><span class="cm-string">&#39;foo&#39;</span> <span class="cm-operator">+</span> <span class="cm-variable">suffix</span><span class="cm-puncutation">}</span>(<span class="cm-string">&#39;This is &#39;</span>)

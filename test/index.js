@@ -8,6 +8,9 @@ var barrage = require('barrage');
 var github = require('github-basic');
 var highlight = require('../bin/jade-highlight');
 
+// var bef;
+// function before(b) {bef = b;}
+// function it(name, fn) { bef.call({timeout: function () {}}, fn); }
 var testCases;
 before(function (done) {
   this.timeout(10000);

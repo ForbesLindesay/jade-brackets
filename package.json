@@ -28,8 +28,8 @@
     "then-request": "0.0.4"
   },
   "dependencies": {
-    "highlight-codemirror": "~3.20.0",
-    "code-mirror": "~3.20.0"
+    "codemirror": "4.6.0",
+    "highlight-codemirror": "4.6.1"
   },
   "scripts": {
     "test": "mocha -R spec",

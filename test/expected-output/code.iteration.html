@@ -1,16 +1,16 @@
 
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">items</span> = [<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>]
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">items</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>]
 
 <span class="cm-tag">ul</span>
 <span class="cm-indent">  </span><span class="cm-punctuation">-</span> <span class="cm-variable">items</span>.<span class="cm-property">forEach</span>(<span class="cm-keyword">function</span>(<span class="cm-def">item</span>){
 <span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-punctuation">=</span> <span class="cm-variable-2">item</span>
 <span class="cm-indent">  </span><span class="cm-punctuation">-</span> })
 
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">items</span> = [<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>]
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">items</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>]
 
 <span class="cm-tag">ul</span>
 <span class="cm-indent">  </span><span class="cm-keyword">for</span><span class="cm-variable"> item, i</span><span class="cm-keyword"> in</span> <span class="cm-variable">items</span>
-<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-punctuation">(</span><span class="cm-attribute">class</span>=<span class="cm-string">&#39;item-#{i}&#39;</span><span class="cm-punctuation">)</span><span class="cm-punctuation">=</span> <span class="cm-variable">item</span>
+<span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-punctuation">(</span><span class="cm-attribute">class</span><span class="cm-operator">=</span><span class="cm-string">&#39;item-#{i}&#39;</span><span class="cm-punctuation">)</span><span class="cm-punctuation">=</span> <span class="cm-variable">item</span>
 
 <span class="cm-tag">ul</span>
 <span class="cm-indent">  </span><span class="cm-keyword">each</span><span class="cm-variable"> item, i</span><span class="cm-keyword"> in</span> <span class="cm-variable">items</span>
@@ -20,16 +20,16 @@
 <span class="cm-indent">  </span><span class="cm-keyword">each</span><span class="cm-variable"> $item</span><span class="cm-keyword"> in</span> <span class="cm-variable">items</span>
 <span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-punctuation">=</span> <span class="cm-variable">$item</span>
 
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">nums</span> = [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">letters</span> = [<span class="cm-string">&#39;a&#39;</span>, <span class="cm-string">&#39;b&#39;</span>, <span class="cm-string">&#39;c&#39;</span>]
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">nums</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">letters</span> <span class="cm-operator">=</span> [<span class="cm-string">&#39;a&#39;</span>, <span class="cm-string">&#39;b&#39;</span>, <span class="cm-string">&#39;c&#39;</span>]
 
 <span class="cm-tag">ul</span>
 <span class="cm-indent">  </span><span class="cm-keyword">for</span><span class="cm-variable"> l</span><span class="cm-keyword"> in</span> <span class="cm-variable">letters</span>
 <span class="cm-indent">    </span><span class="cm-keyword">for</span><span class="cm-variable"> n</span><span class="cm-keyword"> in</span> <span class="cm-variable">nums</span>
 <span class="cm-indent">      </span><span class="cm-tag">li</span><span class="cm-string"> #{n}: #{l}</span>
 
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">count</span> = <span class="cm-number">1</span>
-<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">counter</span> = <span class="cm-keyword">function</span>() { <span class="cm-keyword">return</span> [<span class="cm-variable">count</span>++, <span class="cm-variable">count</span>++, <span class="cm-variable">count</span>++] }
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">count</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>
+<span class="cm-punctuation">-</span> <span class="cm-keyword">var</span> <span class="cm-variable">counter</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>() { <span class="cm-keyword">return</span> [<span class="cm-variable">count</span><span class="cm-operator">++</span>, <span class="cm-variable">count</span><span class="cm-operator">++</span>, <span class="cm-variable">count</span><span class="cm-operator">++</span>] }
 <span class="cm-tag">ul</span>
 <span class="cm-indent">  </span><span class="cm-keyword">for</span><span class="cm-variable"> n</span><span class="cm-keyword"> in</span> <span class="cm-variable">counter</span>()
 <span class="cm-indent">    </span><span class="cm-tag">li</span><span class="cm-string"> #{n}</span>

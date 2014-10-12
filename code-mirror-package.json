@@ -9,6 +9,6 @@
     "url": "git://github.com/ForbesLindesay/jade-brackets.git"
   },
   "peerDependencies ": {
-    "code-mirror": "~3"
+    "code-mirror": "^4.6.0"
   }
 }
