@@ -3,7 +3,7 @@
   "title": "Jade (Official Plugin)",
   "description": "Add first class support for jade (including syntax highlighting).  This module is maintained by the maintainer of jade.",
   "homepage": "https://github.com/ForbesLindesay/jade-brackets",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "author": "Forbes Lindesay (http://www.forbeslindesay.co.uk)",
   "license": "MIT",
   "engines": {
