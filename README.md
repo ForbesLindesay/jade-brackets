@@ -3,7 +3,7 @@
 This repository houses the source code that generates three different tools to help you program in jade:
 
  - jade-brackets: the official jade plugin for the brackets editor
- - jade-highlight: a syntax highlighter for highlighting jade in node.js
+ - jade-highlighter: a syntax highlighter for highlighting jade in node.js
  - jade-code-mirror: a browserifyable npm library that adds jade support to code-mirror
 
 There's also the raw CodeMirror mode in /lib/mode.js
@@ -16,22 +16,22 @@ There's also the raw CodeMirror mode in /lib/mode.js
 This is the official jade plugin for [Brackets](http://brackets.io/).  Brackets is the recommended editor for jade.
 
 
-## jade-highlight
+## jade-highlighter
 
 A simple syntax highlighter for jade.
 
-[![NPM version](https://img.shields.io/npm/v/jade-highlight.svg)](http://badge.fury.io/js/jade-highlight)
+[![NPM version](https://img.shields.io/npm/v/jade-highlighter.svg)](http://badge.fury.io/js/jade-highlighter)
 
 ### Installation
 
 ```
-npm install jade-highlight
+npm install jade-highlighter
 ```
 
 ### Usage
 
 ```js
-var jade = require('jade-highlight');
+var jade = require('jade-highlighter');
 
 // Optionally register additional languages to highlight filters etc. (by default html, js, css and markdown are supported)
 jade.loadMode('java');
