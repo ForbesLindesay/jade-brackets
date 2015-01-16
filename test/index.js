@@ -16,7 +16,7 @@ before(function (done) {
   this.timeout(10000);
   if (!fs.existsSync(__dirname + '/cases')) fs.mkdirSync(__dirname + '/cases');
   github.json('GET', '/repos/:owner/:repo/contents/:path', {
-    owner: 'visionmedia',
+    owner: 'jadejs',
     repo: 'jade',
     path: 'test/cases'
   }).then(function (res) {
@@ -32,7 +32,7 @@ before(function (done) {
       if (remoteSha === localSha) return name;
       console.dir(name);
       return github('GET', 'https://raw.github.com/:owner/:repo/master/:path/:file', {
-        owner: 'visionmedia',
+        owner: 'jadejs',
         repo: 'jade',
         path: 'test/cases',
         file: name
