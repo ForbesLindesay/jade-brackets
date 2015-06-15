@@ -1,0 +1,12 @@
+<span class="cm-punctuation">-</span>
+<span class="cm-indent">  </span><span class="cm-tag">list</span><span class="cm-string"> = [&quot;uno&quot;, &quot;dos&quot;, &quot;tres&quot;,</span>
+<span class="cm-indent">          </span>&quot;<span class="cm-tag">cuatro</span>&quot;,<span class="cm-string"> &quot;cinco&quot;, &quot;seis&quot;];</span>
+<span class="cm-comment">//- Without a block, the element is accepted and no code is generated</span>
+<span class="cm-punctuation">-</span>
+<span class="cm-keyword">each</span><span class="cm-variable"> item</span><span class="cm-keyword"> in</span> <span class="cm-variable">list</span>
+<span class="cm-indent">  </span><span class="cm-punctuation">-</span>
+<span class="cm-indent">    </span><span class="cm-tag">string</span><span class="cm-string"> = item.charAt(0)</span>
+<span class="cm-indent">    </span>
+<span class="cm-indent">      </span><span class="cm-qualifier">.toUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span><span class="cm-string"> +</span>
+<span class="cm-indent">    </span><span class="cm-tag">item</span><span class="cm-qualifier">.slice</span><span class="cm-punctuation">(</span><span class="cm-attribute">1</span><span class="cm-punctuation">)</span>;
+<span class="cm-indent">  </span><span class="cm-tag">li</span><span class="cm-punctuation">=</span> <span class="cm-variable">string</span>
