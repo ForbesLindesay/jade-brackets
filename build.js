@@ -34,6 +34,7 @@ var autocomplete = fs.readFileSync(__dirname + '/lib/autocomplete/index.js', 'ut
 var plugin = '';
 plugin += 'define(function (require, exports, module) {\n';
 plugin += '  "use strict";\n\n';
+plugin += '  var CodeMirror = brackets.getModule("thirdparty/CodeMirror/lib/codemirror");\n';
 plugin += '  ' + mode.replace(/\n/gm, '\n  ') + '\n\n';
 plugin += '  var LanguageManager = brackets.getModule("language/LanguageManager");\n';
 plugin += '  LanguageManager.defineLanguage("jade", ' + JSON.stringify(require('./lib/language-definition.js')) + ');\n';
