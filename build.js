@@ -1,8 +1,12 @@
 'use strict';
 
-var EXTENSIONS_FOLDER = '/Users/forbeslindesay/Library/Application Support/Brackets/extensions/user';
+function getUserHome() {
+  return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+}
 
-var fs = require('fs');
+var EXTENSIONS_FOLDER = getUserHome() + '/Library/Application Support/Brackets/extensions/user';
+
+var fs = require('fs-extra');
 var rm = require('rimraf').sync;
 var Zip = require('node-zip');
 
@@ -17,9 +21,9 @@ function pkg(name) {
   return JSON.stringify(pkg, null, '  ');
 }
 
+var autocompile = fs.readFileSync(__dirname + '/lib/autocompile.js', 'utf8');
 var mode = fs.readFileSync(__dirname + '/lib/mode.js', 'utf8');
 mode += ';' + fs.readFileSync(__dirname + '/lib/overlay.js', 'utf8');
-
 
 // BRACKETS PACKAGE
 
@@ -34,6 +38,7 @@ var autocomplete = fs.readFileSync(__dirname + '/lib/autocomplete/index.js', 'ut
 var plugin = '';
 plugin += 'define(function (require, exports, module) {\n';
 plugin += '  "use strict";\n\n';
+plugin += '  ' + autocompile.replace(/\n/gm, '\n  ') + '\n\n';
 plugin += '  ' + mode.replace(/\n/gm, '\n  ') + '\n\n';
 plugin += '  var LanguageManager = brackets.getModule("language/LanguageManager");\n';
 plugin += '  LanguageManager.defineLanguage("jade", ' + JSON.stringify(require('./lib/language-definition.js')) + ');\n';
@@ -45,6 +50,7 @@ var zip = new Zip();
 zip.file('main.js', plugin);
 zip.file('package.json', bracketsPackage);
 zip.file('LICENSE', fs.readFileSync(__dirname + '/LICENSE', 'utf8'));
+zip.file('node/JadeDomain.js', fs.readFileSync(__dirname + '/node/JadeDomain.js', 'utf8'));
 fs.writeFileSync(__dirname + '/bin/jade.zip', zip.generate({base64:false,compression:'DEFLATE'}), 'binary');
 
 if (fs.existsSync(EXTENSIONS_FOLDER)) {
@@ -52,6 +58,8 @@ if (fs.existsSync(EXTENSIONS_FOLDER)) {
   fs.mkdirSync(EXTENSIONS_FOLDER + '/jade');
   fs.writeFileSync(EXTENSIONS_FOLDER + '/jade/package.json', bracketsPackage);
   fs.writeFileSync(EXTENSIONS_FOLDER + '/jade/main.js', plugin);
+  fs.mkdirSync(EXTENSIONS_FOLDER + '/jade/node');
+  fs.copySync(__dirname + "/node/JadeDomain.js", EXTENSIONS_FOLDER + '/jade/node/JadeDomain.js');
   console.log('updated plugin');
 }
 
