@@ -4,14 +4,35 @@
     var jade = require("jade");
     var fs = require("fs");
     var path = require("path");
-        
-    function cmdRender(fullpath) {
-        var html = jade.renderFile(fullpath, { pretty: true });
-        var basename = path.basename(fullpath);
-        var destname = basename.replace(".jade", ".html");
-        fs.writeFileSync(path.join(path.dirname(fullpath), destname), html);
+    var JI = require('jade-inheritance');
+
+    function render(filepath, cwd, basename) {
+        var html = jade.renderFile(filepath, { pretty: true });
+        var outputFileName = path.join(cwd, basename.replace(/\.jade$/, ".html"));
+        fs.writeFileSync(outputFileName, html);
     }
-    
+
+    function cmdRender(filepath) {
+        filepath = path.normalize(filepath);
+        var basename = path.basename(filepath);
+        var ext = path.extname(basename);
+        var cwd = path.dirname(filepath);
+
+        if (basename[0] == "_") { // partial file
+            var inheritance = new JI(filepath, cwd, {
+                basedir: cwd
+            });
+            inheritance.files.forEach(function (file) {
+                if (file[0] != "_") {
+                    render(path.join(cwd, file), cwd, file);
+                    console.log(file, " is rendered!");
+                }
+            });
+        } else {
+            render(filepath, cwd, basename);
+        }
+    }
+
     /**
      * Initializes the test domain with several test commands.
      * @param {DomainManager} domainManager The DomainManager for the server
