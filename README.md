@@ -9,7 +9,7 @@ This repository houses the source code that generates three different tools to h
 There's also the raw CodeMirror mode in /lib/mode.js
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/jade-brackets/master.svg)](https://travis-ci.org/ForbesLindesay/jade-brackets)
-[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/jade-brackets.svg)](https://gemnasium.com/ForbesLindesay/jade-brackets)
+[![Dependency Status](https://img.shields.io/david/ForbesLindesay/jade-brackets.svg)](https://david-dm.org/ForbesLindesay/jade-brackets)
 
 ## jade-brackets
 
