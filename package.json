@@ -14,21 +14,21 @@
     "url": "git://github.com/ForbesLindesay/jade-brackets.git"
   },
   "devDependencies": {
-    "rimraf": "~2.2.4",
-    "express": "~3.4.7",
-    "jade": "~0.35.0",
-    "node-zip": "~1.0.1",
-    "github-basic": "~2.0.0",
-    "mocha": "~1.15.1",
-    "promise": "^5.0.0",
-    "sha": "~1.2.3",
-    "barrage": "~1.0.0",
-    "browserify-middleware": "~2.2.0",
+    "rimraf": "~2.6.1",
+    "express": "~4.14.1",
+    "jade": "~1.11.0",
+    "node-zip": "~1.1.1",
+    "github-basic": "~6.0.0",
+    "mocha": "~3.2.0",
+    "promise": "^7.1.1",
+    "sha": "~2.0.1",
+    "barrage": "~1.1.0",
+    "browserify-middleware": "~7.1.0",
     "win-spawn": "~2.0.0",
-    "then-request": "0.0.4"
+    "then-request": "2.2.0"
   },
   "dependencies": {
-    "codemirror": "4.6.0",
+    "codemirror": "5.24.2",
     "highlight-codemirror": "4.6.1"
   },
   "scripts": {
