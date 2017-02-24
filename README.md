@@ -1,5 +1,7 @@
 # Jade Tools
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/jade-brackets.svg)](https://greenkeeper.io/)
+
 This repository houses the source code that generates three different tools to help you program in jade:
 
  - jade-brackets: the official jade plugin for the brackets editor
